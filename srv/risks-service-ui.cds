@@ -52,9 +52,9 @@ annotate RiskService.Risks with @(
 			}
 		],
 		Facets: [
-			{$Type: 'UI.ReferenceFacet', Label: 'General Info', Target: '@UI.FieldGroup#Main'}
+			{$Type: 'UI.ReferenceFacet', Label: 'Risk Info', Target: '@UI.FieldGroup#RiskInfo'}
 		],
-		FieldGroup#Main: {
+		FieldGroup#RiskInfo: {
 			Data: [
 				{Value: miti_ID},
 				{
@@ -110,14 +110,14 @@ annotate RiskService.Mitigations with @(
 			{Value: timeline}
 		],
 		Facets: [
-			{$Type: 'UI.ReferenceFacet', Label: 'Details', Target: '@UI.FieldGroup#Main1'}
+			{$Type: 'UI.ReferenceFacet', Label: 'Mitigation Info', Target: '@UI.FieldGroup#MitigationInfo'},
+            {$Type: 'UI.ReferenceFacet', Label: 'Risk Details', Target: 'risks/@UI.LineItem'}
 		],
-		FieldGroup#Main1: {
+		FieldGroup#MitigationInfo: {
 			Data: [
 				{Value: owner },
 				{Value: timeline  },
-                {Value: risks.title },
-				{Value: risks.impact }
+                {Value: risks.title }
 			]
 		}
 	},
